@@ -14,3 +14,5 @@ let g: {
   c?: string;
   [key: number]: boolean;
 };
+
+g = { b: 1, 10: true };
