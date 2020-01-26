@@ -57,3 +57,8 @@ type CatAndDog = Cat & Dog;
 let cat1 = { firstname: "oscar", meow: true };
 let dog1 = { firstname: "chalky", bark: true };
 let catdog = { firstname: "horsey", meow: true, bark: true };
+
+// ARRAYS
+let arr1: number[] = [];
+arr1.push(1);
+console.log(arr1);
