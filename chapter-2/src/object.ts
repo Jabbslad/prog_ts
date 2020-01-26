@@ -22,3 +22,16 @@ let h: object = {
 };
 
 let user: { readonly firstname: string } = { firstname: "jabbs" };
+
+type Age = number;
+
+let i: { name: string; age: Age } = { name: "Jabbslad", age: 10 };
+
+type Colour = "red";
+{
+  type Colour = "blue";
+  let x: Colour = "blue";
+  console.log(x);
+}
+let x: Colour = "red";
+console.log(x);
