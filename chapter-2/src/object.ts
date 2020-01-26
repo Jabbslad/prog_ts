@@ -89,3 +89,7 @@ let roArr: readonly number[] = [1, 2, 3, 4, 5];
 let roArr2 = roArr.concat(6); // look into using 'immutable' package for better performance.
 console.log(roArr2);
 roArr2.push(3);
+
+function double(x: number): number {
+  return x + x;
+}
