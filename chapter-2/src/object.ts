@@ -57,7 +57,3 @@ type CatAndDog = Cat & Dog;
 let cat1 = { firstname: "oscar", meow: true };
 let dog1 = { firstname: "chalky", bark: true };
 let catdog = { firstname: "horsey", meow: true, bark: true };
-
-console.log(typeof cat1);
-console.log(typeof dog1);
-console.log(typeof catdog);
