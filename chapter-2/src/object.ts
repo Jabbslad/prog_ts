@@ -16,3 +16,9 @@ let g: {
 };
 
 g = { b: 1, 10: true };
+
+let h: object = {
+  a: 10
+};
+
+let user: { readonly firstname: string } = { firstname: "jabbs" };
