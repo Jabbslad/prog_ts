@@ -39,7 +39,6 @@ console.log(x);
 type NumOrString = number | string;
 let j: NumOrString[] = [1, "2"];
 j.push(3);
-console.log(j);
 
 let k = [1, "2", 3, "four"];
 k = k.map(n => {
@@ -49,3 +48,16 @@ k = k.map(n => {
   return n.toUpperCase();
 });
 console.log(k);
+
+type Cat = { firstname: string; meow: boolean };
+type Dog = { firstname: string; bark: boolean };
+type CatOrDog = Cat | Dog;
+type CatAndDog = Cat & Dog;
+
+let cat1 = { firstname: "oscar", meow: true };
+let dog1 = { firstname: "chalky", bark: true };
+let catdog = { firstname: "horsey", meow: true, bark: true };
+
+console.log(typeof cat1);
+console.log(typeof dog1);
+console.log(typeof catdog);
