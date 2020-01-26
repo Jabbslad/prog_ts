@@ -84,3 +84,8 @@ let trainFares: TrainFare = [[1.0, 2.0], [1.0]];
 
 let friends: [string, ...string[]] = ["fiend1", "friend2"];
 let heterogenous: [number, boolean, ...string[]] = [1.0, true, "friend1"]; // ordering matters
+
+let roArr: readonly number[] = [1, 2, 3, 4, 5];
+let roArr2 = roArr.concat(6); // look into using 'immutable' package for better performance.
+console.log(roArr2);
+roArr2.push(3);
