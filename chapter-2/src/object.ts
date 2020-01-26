@@ -62,3 +62,13 @@ let catdog = { firstname: "horsey", meow: true, bark: true };
 let arr1: number[] = [];
 arr1.push(1);
 console.log(arr1);
+
+function buildArray() {
+  let a = [];
+  a.push(1);
+  a.push("hello");
+  return a;
+}
+
+let arr2 = buildArray();
+// arr2.push(true); <- will not work because the type is number | string
