@@ -93,3 +93,41 @@ roArr2.push(3);
 function double(x: number): number {
   return x + x;
 }
+
+enum Language {
+  English,
+  French
+}
+
+enum Language {
+  Spanish = 2
+}
+
+// NB: `const enum` is inlined. use preserveConstEnums compiler option
+
+console.log(Language.English + Language.French + Language.Spanish === 3);
+
+const enum Flippable {
+  Burger,
+  Table
+}
+
+const enum Flippable2 {
+  Burger = "Burger",
+  Table = "Table"
+}
+
+function flip1(f: Flippable) {
+  return "flipped it";
+}
+
+flip1(Flippable.Burger);
+flip1(12);
+
+function flip2(f: Flippable2) {
+  return "flipped it";
+}
+
+flip2(Flippable2.Burger);
+//flip2(12) // Error TS2345
+//flip2("Horse") // Error TS2345
