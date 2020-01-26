@@ -72,3 +72,15 @@ function buildArray() {
 
 let arr2 = buildArray();
 // arr2.push(true); <- will not work because the type is number | string
+
+// TUPLES
+let tup1: [number] = [1];
+let tup2: [string, string, string] = ["jabbs", ".", "lad"];
+
+console.log(tup2);
+
+type TrainFare = [number, number?][];
+let trainFares: TrainFare = [[1.0, 2.0], [1.0]];
+
+let friends: [string, ...string[]] = ["fiend1", "friend2"];
+let heterogenous: [number, boolean, ...string[]] = [1.0, true, "friend1"]; // ordering matters
