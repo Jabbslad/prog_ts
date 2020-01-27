@@ -21,3 +21,15 @@ let greet4 = (name: string): string => "hello " + name;
 let greet5 = new Function("name", 'return "hello " + name');
 
 console.log(greet5("Jabbslad"));
+let log = (message: string, userId?: string) => {
+  let time = new Date().toLocaleTimeString();
+  console.log(time, message, userId || "User not signed in");
+};
+
+log("page loaded");
+log("user signed in", "Jabbslad");
+
+let log2 = (message: string, userId = "User not signed in") =>
+  log(message, userId);
+
+log2("page loaded");
