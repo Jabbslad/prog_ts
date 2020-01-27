@@ -33,3 +33,8 @@ let log2 = (message: string, userId = "User not signed in") =>
   log(message, userId);
 
 log2("page loaded");
+
+let sumVariadicsafe = (...numbers: number[]): number =>
+  numbers.reduce((total, n) => total + n, 0);
+
+console.log(sumVariadicsafe(1, 2, 3));
