@@ -105,5 +105,11 @@ let reserve: Reserve = (
   toOrDestination: string | Date,
   destination?: string
 ) => {
-  return "home!";
+  let ret: string = "";
+  if (toOrDestination instanceof Date && destination !== undefined) {
+    ret = `${toOrDestination.toLocaleTimeString()} ${destination}`;
+  } else if (typeof toOrDestination === "string") {
+    ret = toOrDestination;
+  }
+  return ret;
 };
