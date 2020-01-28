@@ -81,3 +81,14 @@ for (let n of numbers) {
 }
 
 console.log([...numbers]);
+
+// CALL SIGNATURES
+
+type Log = (message: string, userId?: string) => void;
+
+let log3: Log = (message, userId) => {
+  let time = new Date().toLocaleTimeString();
+  console.log(time, message, userId);
+};
+
+log3("log3", "Jabbslad");
