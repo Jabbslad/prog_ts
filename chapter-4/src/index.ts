@@ -92,3 +92,18 @@ let log3: Log = (message, userId) => {
 };
 
 log3("log3", "Jabbslad");
+
+type Reservation = string;
+
+type Reserve = {
+  (from: Date, to: Date, destination: string): Reservation;
+  (from: Date, destination: string): Reservation;
+};
+
+let reserve: Reserve = (
+  from: Date,
+  toOrDestination: string | Date,
+  destination?: string
+) => {
+  return "home!";
+};
