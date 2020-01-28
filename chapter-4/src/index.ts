@@ -38,3 +38,30 @@ let sumVariadicsafe = (...numbers: number[]): number =>
   numbers.reduce((total, n) => total + n, 0);
 
 console.log(sumVariadicsafe(1, 2, 3));
+
+function* fibseq() {
+  let a = 0;
+  let b = 1;
+  while (true) {
+    yield a;
+    [a, b] = [b, a + b];
+  }
+}
+
+let fs = fibseq();
+console.log(fs.next());
+console.log(fs.next());
+console.log(fs.next());
+console.log(fs.next());
+
+function* createNumbers() {
+  let n = 0;
+  while (1) {
+    yield n++;
+  }
+}
+
+let nums = createNumbers();
+console.log(nums.next());
+console.log(nums.next());
+console.log(nums.next());
