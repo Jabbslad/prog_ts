@@ -184,3 +184,6 @@ function map2<T, U>(array: T[], f: (item: T) => U): U[] {
 }
 
 console.log(map2([1, 2, 3, 4, 5], _ => "" + _));
+
+// annotated generic
+console.log(map2<number, string>([1, 2, 3, 4, 5], _ => "" + _));
