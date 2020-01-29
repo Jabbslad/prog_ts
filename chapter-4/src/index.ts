@@ -187,3 +187,10 @@ console.log(map2([1, 2, 3, 4, 5], _ => "" + _));
 
 // annotated generic
 console.log(map2<number, string>([1, 2, 3, 4, 5], _ => "" + _));
+
+// GENERIC TYPE ALIAS
+
+type MyEvent<T> = {
+  target: T;
+  type: string;
+};
