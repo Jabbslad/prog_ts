@@ -126,11 +126,7 @@ function filter(array, f) {
   return result
 }
 */
-
-
 type Filter = {
   (array: number[], f: (item: number) => boolean): unknown[]
 }
-
-
 //console.log(filter([1, 2, 3, 4, 5], _ => _ < 3))
