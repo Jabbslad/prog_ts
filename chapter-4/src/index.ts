@@ -113,3 +113,24 @@ let reserve: Reserve = (
   }
   return ret;
 };
+
+/*
+function filter(array, f) {
+  let result = []
+  for (let i = 0; i<array.length; i++){
+    let item = array[i]
+    if(f(item)) {
+      result.push(item)
+    }
+  }
+  return result
+}
+*/
+
+
+type Filter = {
+  (array: number[], f: (item: number) => boolean): unknown[]
+}
+
+
+//console.log(filter([1, 2, 3, 4, 5], _ => _ < 3))
