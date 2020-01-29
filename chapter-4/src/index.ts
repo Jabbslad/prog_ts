@@ -174,3 +174,13 @@ let map1: Map1 = (array, f) => {
 };
 
 console.log(map1([1, 2, 3, 4, 5], _ => "" + _));
+
+function map2<T, U>(array: T[], f: (item: T) => U): U[] {
+  let result: U[] = [];
+  for (let x of array) {
+    result.push(f(x));
+  }
+  return result;
+}
+
+console.log(map2([1, 2, 3, 4, 5], _ => "" + _));
