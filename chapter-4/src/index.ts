@@ -1,3 +1,5 @@
+import { lstat } from "fs";
+
 function add(a: number, b: number): number {
   return a + b;
 }
@@ -265,3 +267,24 @@ let buttonEvent: MyEvent2 = {
   target: {},
   type: ""
 };
+
+// EXERCISE5
+
+function is<T>(...params: T[]): boolean {
+  if (params.length < 2) {
+    return true;
+  }
+  let last = params[0];
+  for (let i = 1; i < params.length; i++) {
+    if (params[i] !== last) {
+      return false;
+    }
+    last = params[i];
+  }
+  return true;
+}
+
+console.log(is("string", "otherstring"));
+console.log(is(42, 42));
+//is(10, "foo");
+console.log(is([1], [1, 2], [1, 2, 3]));
