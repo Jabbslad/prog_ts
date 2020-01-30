@@ -227,3 +227,15 @@ let c1 = mapNode(c, _ => _.toUpperCase());
 console.log(a1);
 console.log(b1);
 console.log(c1);
+
+type HasSides = { numberOfSides: number };
+type SidesHaveLength = { sideLength: number };
+type Square = HasSides & SidesHaveLength;
+
+function logPerimeter<T extends HasSides & SidesHaveLength>(shape: T): T {
+  console.log(shape.numberOfSides * shape.sideLength);
+  return shape;
+}
+
+let square: Square = { numberOfSides: 4, sideLength: 3 };
+logPerimeter(square);
