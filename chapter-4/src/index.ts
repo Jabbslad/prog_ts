@@ -239,3 +239,15 @@ function logPerimeter<T extends HasSides & SidesHaveLength>(shape: T): T {
 
 let square: Square = { numberOfSides: 4, sideLength: 3 };
 logPerimeter(square);
+
+// BOUNDED POLYMORPHISM TO MODEL ARITY
+
+function call<T extends unknown[], R>(f: (...args: T) => R, ...args: T): R {
+  return f(...args);
+}
+
+function fill(length: number, value: string): string[] {
+  return Array.from({ length }, () => value);
+}
+
+console.log(call(fill, 10, "a")); // evaluates to an array of 10 'a's
