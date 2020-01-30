@@ -49,3 +49,9 @@ class Game {
     return [new King("White", "E", 1), new King("Black", "E", 8)];
   }
 }
+
+let set = new Set();
+set
+  .add(1)
+  .add(2)
+  .add(3);
