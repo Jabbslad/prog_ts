@@ -251,3 +251,17 @@ function fill(length: number, value: string): string[] {
 }
 
 console.log(call(fill, 10, "a")); // evaluates to an array of 10 'a's
+
+// GENERIC TYPE DEFAULTS
+
+type HTMLElement = {};
+
+type MyEvent2<T extends HTMLElement = HTMLElement> = {
+  target: T;
+  type: string;
+};
+
+let buttonEvent: MyEvent2 = {
+  target: {},
+  type: ""
+};
