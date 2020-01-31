@@ -57,3 +57,12 @@ set
   .add(3);
 set.has(2);
 set.has(4);
+
+interface Set2 {
+  has(value: number): boolean;
+}
+
+interface MutableSet extends Set2 {
+  add(value: number): this;
+  delete(value: number): this;
+}
