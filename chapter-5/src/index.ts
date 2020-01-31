@@ -92,3 +92,16 @@ interface Animal {
   eat(food: string): void;
   sleep(hours: number): void;
 }
+
+class Cat implements Animal {
+  eat(food: string): void {
+    console.info("ate some", food);
+  }
+  sleep(hours: number): void {
+    console.info("slept for", hours, "hours");
+  }
+}
+
+let cat: Cat = new Cat();
+cat.eat("cat food");
+cat.sleep(6);
