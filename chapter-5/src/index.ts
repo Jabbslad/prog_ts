@@ -89,19 +89,29 @@ let user: User = {
 console.log(user);
 
 interface Animal {
+  readonly name: string;
   eat(food: string): void;
   sleep(hours: number): void;
 }
 
-class Cat implements Animal {
+interface Feline {
+  meow(): void;
+}
+
+class Cat implements Animal, Feline {
+  name = "cat";
   eat(food: string): void {
     console.info("ate some", food);
   }
   sleep(hours: number): void {
     console.info("slept for", hours, "hours");
   }
+  meow(): void {
+    console.info("meow!");
+  }
 }
 
 let cat: Cat = new Cat();
 cat.eat("cat food");
 cat.sleep(6);
+cat.meow();
