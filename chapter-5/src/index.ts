@@ -87,3 +87,8 @@ let user: User = {
 };
 
 console.log(user);
+
+interface Animal {
+  eat(food: string): void;
+  sleep(hours: number): void;
+}
