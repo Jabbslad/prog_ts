@@ -58,6 +58,8 @@ set
 set.has(2);
 set.has(4);
 
+// Interface Extension
+
 interface Set2 {
   has(value: number): boolean;
 }
@@ -66,3 +68,22 @@ interface MutableSet extends Set2 {
   add(value: number): this;
   delete(value: number): this;
 }
+
+// Declaration Merging
+
+interface User {}
+
+interface User {
+  name: string;
+}
+
+interface User {
+  age: number;
+}
+
+let user: User = {
+  name: "Jamie",
+  age: 18
+};
+
+console.log(user);
