@@ -136,3 +136,26 @@ class StringDatabase {
     return db;
   }
 }
+
+type State2<V> = {
+  [key: string]: V | null;
+};
+
+class Map1<K, V> {
+  private state: State2<V> = {};
+  get(key: K): V | null {
+    let key_s = JSON.stringify(key);
+    return key_s in this.state ? this.state[key_s] : null;
+  }
+  set(key: K, value: V): void {
+    let key_s = JSON.stringify(key);
+    this.state[key_s] = value;
+  }
+}
+
+let map1: Map1<number, string> = new Map1();
+map1.set(1, "one");
+map1.set(1, "one");
+map1.set(2, "two");
+
+console.log(map1);
