@@ -242,6 +242,12 @@ console.log(Shoe.create("boot"));
 // Builder Pattern
 class RequestBuilder {
   private url: string | null = null;
+  private method: "get" | "post" | null = null;
+
+  setMethod(method: "get" | "post"): this {
+    this.method = method;
+    return this;
+  }
 
   setUrl(url: string): this {
     this.url = url;
@@ -249,5 +255,5 @@ class RequestBuilder {
   }
 }
 
-let req = new RequestBuilder().setUrl("http://oof");
+let req = new RequestBuilder().setMethod("get").setUrl("http://oof");
 console.log(req);
