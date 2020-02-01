@@ -194,3 +194,14 @@ class HardToDebugUser {
 let User = withEZDebug(HardToDebugUser);
 let user1 = new User(1, "Jabbs", "lad");
 console.log(user1.debug());
+
+// Final class
+
+class MessageQueue {
+  private constructor(private messages: string[]) {}
+  static create(messages: string[]) {
+    return new MessageQueue(messages);
+  }
+}
+
+console.log(MessageQueue.create([]));
