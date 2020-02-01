@@ -238,3 +238,16 @@ let Shoe = {
 };
 
 console.log(Shoe.create("boot"));
+
+// Builder Pattern
+class RequestBuilder {
+  private url: string | null = null;
+
+  setUrl(url: string): this {
+    this.url = url;
+    return this;
+  }
+}
+
+let req = new RequestBuilder().setUrl("http://oof");
+console.log(req);
