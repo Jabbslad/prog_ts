@@ -257,3 +257,24 @@ class RequestBuilder {
 
 let req = new RequestBuilder().setMethod("get").setUrl("http://oof");
 console.log(req);
+
+type ShoeType = {
+  create(type: "balletFlat"): BalletFlat;
+  create(type: "boot"): Boot;
+  create(type: "sneaker"): Sneaker;
+};
+
+let Shoe2: ShoeType = {
+  create(type: "balletFlat" | "boot" | "sneaker") {
+    switch (type) {
+      case "balletFlat":
+        return new BalletFlat();
+      case "boot":
+        return new Boot();
+      case "sneaker":
+        return new Sneaker();
+    }
+  }
+};
+
+Shoe2.create("boot");
