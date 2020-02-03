@@ -44,3 +44,5 @@ function chirp(bird: Bird): Bird {
   bird.chirp();
   return bird;
 }
+
+function clone(f: (bird: Bird) => Bird): void {}
