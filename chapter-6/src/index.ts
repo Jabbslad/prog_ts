@@ -46,3 +46,9 @@ function chirp(bird: Bird): Bird {
 }
 
 function clone(f: (bird: Bird) => Bird): void {}
+
+function birdToBird(b: Bird): Bird {
+  return new Bird();
+}
+
+clone(birdToBird);
