@@ -19,3 +19,15 @@ let existingUser: ExistingUser = {
 console.log(existingUser);
 deleteUser(existingUser);
 console.log(existingUser);
+
+type LegacyUser = {
+  id: number | string;
+  name: string;
+};
+
+let legacyUser: LegacyUser = {
+  id: "1234567",
+  name: "Xin Yang"
+};
+
+//deleteUser(legacyUser);
