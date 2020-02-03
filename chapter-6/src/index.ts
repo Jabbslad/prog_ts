@@ -8,5 +8,14 @@ type NewUser = {
 };
 
 function deleteUser(user: { id?: number; name: string }) {
-  console.log(`deleted: ${user.id}`);
+  delete user.id;
 }
+
+let existingUser: ExistingUser = {
+  id: 1,
+  name: "Jabbslad"
+};
+
+console.log(existingUser);
+deleteUser(existingUser);
+console.log(existingUser);
