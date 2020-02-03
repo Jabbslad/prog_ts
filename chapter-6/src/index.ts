@@ -64,3 +64,11 @@ function birdToAnimal(bird: Bird): Animal {
 }
 
 // clone(birdToAnimal);
+
+// Type Widening
+
+const a = "x"; // 'x'
+let b = a; // widened to string
+
+const c: "x" = "x"; // explicit type set
+let d = c; // 'x' (unwidened)
