@@ -6,3 +6,7 @@ type ExistingUser = {
 type NewUser = {
   name: string;
 };
+
+function deleteUser(user: { id?: number; name: string }) {
+  console.log(`deleted: ${user.id}`);
+}
