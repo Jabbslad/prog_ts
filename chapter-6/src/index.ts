@@ -52,3 +52,15 @@ function birdToBird(b: Bird): Bird {
 }
 
 clone(birdToBird);
+
+function birdToCrow(bird: Bird): Crow {
+  return new Crow();
+}
+
+clone(birdToCrow);
+
+function birdToAnimal(bird: Bird): Animal {
+  return new Animal();
+}
+
+// clone(birdToAnimal);
