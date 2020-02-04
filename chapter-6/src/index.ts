@@ -72,3 +72,13 @@ let b = a; // widened to string
 
 const c: "x" = "x"; // explicit type set
 let d = c; // 'x' (unwidened)
+
+type Options = {
+  baseURL: string;
+  cacheSize?: number;
+  tier?: "prod" | "dev";
+};
+
+class API {
+  constructor(private options: Options) {}
+}
