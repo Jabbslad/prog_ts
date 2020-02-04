@@ -82,3 +82,8 @@ type Options = {
 class API {
   constructor(private options: Options) {}
 }
+
+new API({
+  baseURL: "http://test.com",
+  tier: "prod"
+});
