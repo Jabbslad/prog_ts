@@ -87,3 +87,10 @@ new API({
   baseURL: "http://test.com",
   tier: "prod"
 });
+
+/* error
+new API({
+    baseURL: "test.com",
+    tierr: 'prod'
+}) 
+*/
