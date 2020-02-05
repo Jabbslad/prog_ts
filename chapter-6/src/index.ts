@@ -127,3 +127,22 @@ function parseWidth(width: number | string | null | undefined): Width | null {
   }
   return null;
 }
+
+type Weekday = "Mon" | "Tue" | "Wed" | "Thur" | "Fri";
+type Day = Weekday | "Sat" | "Sun";
+
+function getNextDay(w: Weekday): Day {
+  switch (w) {
+    case "Mon":
+      return "Tue";
+    default:
+      return "Mon";
+  }
+}
+
+function isBig(n: number): boolean {
+  if (n >= 100) {
+    return true;
+  }
+  return false;
+}
