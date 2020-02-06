@@ -180,37 +180,47 @@ type Get = {
     k1: K1,
     k2: K2
   ): O[K1][K2];
-  <O extends Object, K1 extends keyof O, K2 extends keyof O[K1], K3 extends keyof O[K1][K2](o: O, k1: K1, k2: K2, k3: K3): O[K1][K2][K3]
+  <
+    O extends Object,
+    K1 extends keyof O,
+    K2 extends keyof O[K1],
+    K3 extends keyof O[K1][K2]
+  >(
+    o: O,
+    k1: K1,
+    k2: K2,
+    k3: K3
+  ): O[K1][K2][K3];
 };
 
 let getter: Get = (obj: any, ...keys: string[]) => {
-  let result = obj
-  keys.forEach(k => result = result[k])
-  return result
-}
+  let result = obj;
+  keys.forEach(k => (result = result[k]));
+  return result;
+};
 
-console.log(getter(activityLog, 'events', 0, 'type'))
+console.log(getter(activityLog, "events", 0, "type"));
 
 let nextDay: Record<Weekday, Day> = {
-  Mon: 'Tue',
-  Tue: 'Wed',
-  Wed: 'Thur',
-  Thur: "Fri",
-  Fri: "Sat"
-}
-
-// Mapped Types
-let nextDay2: {[K in Weekday]: Day} = {
   Mon: "Tue",
   Tue: "Wed",
   Wed: "Thur",
   Thur: "Fri",
   Fri: "Sat"
-}
+};
+
+// Mapped Types
+let nextDay2: { [K in Weekday]: Day } = {
+  Mon: "Tue",
+  Tue: "Wed",
+  Wed: "Thur",
+  Thur: "Fri",
+  Fri: "Sat"
+};
 
 type RecordJ<K extends keyof any, T> = {
-  [P in K]: T
-}
+  [P in K]: T;
+};
 
 let nextDayJ: RecordJ<Weekday, Day> = {
   Mon: "Tue",
@@ -218,6 +228,6 @@ let nextDayJ: RecordJ<Weekday, Day> = {
   Wed: "Thur",
   Thur: "Fri",
   Fri: "Sat"
-}
+};
 
-console.log(nextDayJ.Mon)
+console.log(nextDayJ.Mon);
