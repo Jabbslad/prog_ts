@@ -207,3 +207,7 @@ let nextDay2: {[K in Weekday]: Day} = {
   Thur: "Fri",
   Fri: "Sat"
 }
+
+type RecordJ<K extends keyof any, T> = {
+  [P in K]: T
+}
