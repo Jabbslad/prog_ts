@@ -188,3 +188,5 @@ let getter: Get = (obj: any, ...keys: string[]) => {
   keys.forEach(k => result = result[k])
   return result
 }
+
+console.log(getter(activityLog, 'events', 0, 'type'))
