@@ -182,3 +182,9 @@ type Get = {
   ): O[K1][K2];
   <O extends Object, K1 extends keyof O, K2 extends keyof O[K1], K3 extends keyof O[K1][K2](o: O, k1: K1, k2: K2, k3: K3): O[K1][K2][K3]
 };
+
+let getter: Get = (obj: any, ...keys: string[]) => {
+  let result = obj
+  keys.forEach(k => result = result[k])
+  return result
+}
