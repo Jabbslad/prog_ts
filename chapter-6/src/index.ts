@@ -198,3 +198,12 @@ let nextDay: Record<Weekday, Day> = {
   Thur: "Fri",
   Fri: "Sat"
 }
+
+// Mapped Types
+let nextDay2: {[K in Weekday]: Day} = {
+  Mon: "Tue",
+  Tue: "Wed",
+  Wed: "Thur",
+  Thur: "Fri",
+  Fri: "Sat"
+}
