@@ -211,3 +211,13 @@ let nextDay2: {[K in Weekday]: Day} = {
 type RecordJ<K extends keyof any, T> = {
   [P in K]: T
 }
+
+let nextDayJ: RecordJ<Weekday, Day> = {
+  Mon: "Tue",
+  Tue: "Wed",
+  Wed: "Thur",
+  Thur: "Fri",
+  Fri: "Sat"
+}
+
+console.log(nextDayJ.Mon)
