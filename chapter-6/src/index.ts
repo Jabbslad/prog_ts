@@ -190,3 +190,11 @@ let getter: Get = (obj: any, ...keys: string[]) => {
 }
 
 console.log(getter(activityLog, 'events', 0, 'type'))
+
+let nextDay: Record<Weekday, Day> = {
+  Mon: 'Tue',
+  Tue: 'Wed',
+  Wed: 'Thur',
+  Thur: "Fri",
+  Fri: "Sat"
+}
