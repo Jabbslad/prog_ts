@@ -255,3 +255,13 @@ let optionalAccount1: OptionalAccount = {
 };
 
 console.log(optionalAccount1);
+
+type UnOptional = Required<OptionalAccount>;
+
+let unOptionalAccount1: UnOptional = {
+  id: 1,
+  isEmployee: false,
+  notes: []
+};
+
+console.log(unOptionalAccount1);
