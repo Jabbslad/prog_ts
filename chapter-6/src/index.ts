@@ -231,3 +231,27 @@ let nextDayJ: RecordJ<Weekday, Day> = {
 };
 
 console.log(nextDayJ.Mon);
+
+type Account = {
+  id: number;
+  isEmployee: boolean;
+  notes: string[];
+};
+
+let account1: Account = {
+  id: 1,
+  isEmployee: true,
+  notes: ["note 1"]
+};
+
+console.log(account1);
+
+type OptionalAccount = {
+  [K in keyof Account]?: Account[K];
+};
+
+let optionalAccount1: OptionalAccount = {
+  id: 1
+};
+
+console.log(optionalAccount1);
