@@ -289,3 +289,18 @@ let tupleA = tuple(1, true)
 
 console.log(tupleA)
 
+function isString(a: unknown): boolean {
+    return typeof a === 'string'
+}
+
+console.log(isString('a'))
+console.log(isString([7]))
+
+function parseInput(input: string | number) {
+    let formattedInput: string
+    if(isString(input)) {
+        formattedInput = input.toUpperCase()
+    }
+}
+
+
