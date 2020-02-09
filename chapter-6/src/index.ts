@@ -289,7 +289,7 @@ let tupleA = tuple(1, true)
 
 console.log(tupleA)
 
-function isString(a: unknown): boolean {
+function isString(a: unknown): a is string {
     return typeof a === 'string'
 }
 
