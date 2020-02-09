@@ -287,5 +287,5 @@ function tuple<T extends unknown[]>(...ts: T): T {
 
 let tupleA = tuple(1, true)
 
-
+console.log(tupleA)
 
