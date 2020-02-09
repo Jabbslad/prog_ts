@@ -265,3 +265,15 @@ let unOptionalAccount1: UnOptional = {
 };
 
 console.log(unOptionalAccount1);
+
+type Currency = {
+  unit: "EUR" | "GBP" | "JPY" | "USD";
+  value: number;
+};
+
+let Currency = {
+  DEFAULT: "USD",
+  from(value: number, unit = Currency.DEFAULT): Currency {
+    return { unit, value };
+  }
+};
