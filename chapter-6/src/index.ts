@@ -310,4 +310,11 @@ type IsString<T> = T extends string ? true : false
 type A = IsString<string>
 type B = IsString<number>
 
+type ToArray<T> = T[]
 
+type AArray = ToArray<number>
+type BArray = ToArray<string | number>
+
+let arr: BArray = ["hello", "world"]
+console.log(arr)
+//let arr2: BArray = [true, false]
