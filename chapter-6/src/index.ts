@@ -303,4 +303,7 @@ function parseInput(input: string | number) {
     }
 }
 
+// Conditional Types
+
+type IsString<T> = T extends string ? true : false
 
