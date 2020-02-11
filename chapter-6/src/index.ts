@@ -318,3 +318,11 @@ type BArray = ToArray<string | number>
 let arr: BArray = ["hello", "world"]
 console.log(arr)
 //let arr2: BArray = [true, false]
+
+type ToArray2<T> = T extends unknown ? T[] : T[]
+type AArray2 = ToArray2<number>
+type BArray2 = ToArray2<number | string>
+
+type Without<T, U> = T extends U ? never : T
+type AWithout = Without<boolean | string | number, boolean>
+
