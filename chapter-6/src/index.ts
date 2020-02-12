@@ -329,3 +329,6 @@ type AWithout = Without<boolean | string | number, boolean>;
 // using infer
 type ElementType<T> = T extends unknown[] ? T[number] : T;
 type AElementType = ElementType<number[]>;
+
+type ElementType2<T> = T extends (infer U)[] ? U : T;
+type BElementType2 = ElementType2<number[]>;
