@@ -306,7 +306,6 @@ function parseInput(input: string | number) {
 // Conditional Types
 
 type IsString<T> = T extends string ? true : false;
-
 type A = IsString<string>;
 type B = IsString<number>;
 
@@ -332,3 +331,13 @@ type AElementType = ElementType<number[]>;
 
 type ElementType2<T> = T extends (infer U)[] ? U : T;
 type BElementType2 = ElementType2<number[]>;
+
+// Typesafe prototypes
+
+interface Array<T> {
+  zip<U>(list: U[]): [T, U][];
+}
+
+Array.prototype.zip = function<T, U>(this: T[], list: U[]): [T, U][] {
+  return this.map((v, k) => tuple(v, list[k]));
+};
