@@ -28,3 +28,11 @@ if(isValid(date)) {
 } else {
     console.error("error parsing the date for some reason")
 }
+
+function parse2(birthday: string): Date {
+    let daye = new Date(birthday)
+    if(!isValid(date)) {
+        throw new RangeError("Enter a date in the form YYYY/MM/DD")
+    }
+    return date
+}
