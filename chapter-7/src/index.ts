@@ -36,3 +36,14 @@ function parse2(birthday: string): Date {
     }
     return date
 }
+
+try {
+    let date = parse2(ask())
+    console.info('Date is', date.toISOString())
+} catch (e) {
+    if (e instanceof RangeError) {
+        console.error(e.message)
+    } else {
+        throw e
+    }
+}
