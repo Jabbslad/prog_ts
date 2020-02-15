@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "alwaysStrict": false,
+    "alwaysStrict": true,
     "lib": ["ES2015"],
     "module": "commonjs",
     "outDir": "dist",
