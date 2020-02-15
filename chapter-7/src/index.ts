@@ -5,7 +5,7 @@ function prompt(question: string) {
 }
 
 function ask() {
-  return prompt("when is your birthday? ");
+    return prompt("when is your birthday? ");
 }
 
 function parse(birthday: string): Date | null {
@@ -23,7 +23,7 @@ function isValid(date: Date): boolean {
 
 let date = parse(ask())
 
-if(isValid(date)) {
+if (isValid(date)) {
     console.info('date is ', date.toISOString())
 } else {
     console.error("error parsing the date for some reason")
@@ -31,7 +31,7 @@ if(isValid(date)) {
 
 function parse2(birthday: string): Date {
     let daye = new Date(birthday)
-    if(!isValid(date)) {
+    if (!isValid(date)) {
         throw new RangeError("Enter a date in the form YYYY/MM/DD")
     }
     return date
@@ -48,9 +48,13 @@ try {
     }
 }
 
-class InvalidDateFormatError extends RangeError {}
-class DateIsInTheFutureError extends RangeError {}
+class InvalidDateFormatError extends RangeError { }
+class DateIsInTheFutureError extends RangeError { }
 
+/**
+ * @throws {InvalidDateFormatError} The user entered their birthday incorrectly
+ * @throws {DateIsInTheFutureError} The user entered a birthday in the future
+ */
 function parse3(birthday: string): Date {
     let date = new Date(birthday)
     if (!isValid(date)) {
@@ -65,7 +69,7 @@ function parse3(birthday: string): Date {
 try {
     let date = parse3(ask())
     console.info('date is', date.toISOString())
-} catch(e) {
+} catch (e) {
     if (e instanceof InvalidDateFormatError) {
         console.error(e.message)
     } else if (e instanceof DateIsInTheFutureError) {
