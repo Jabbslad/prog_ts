@@ -96,11 +96,29 @@ if (result instanceof InvalidDateFormatError) {
     console.error(result.message)
 }
 
-interface Option<T> { }
-class Some<T> implements Option<T> {
-    constructor(private value: T)
+interface Option<T> {
+    flatMap<U>(f: (value: T) => None): None
+    flatMap<U>(f: (value: T) => Option<U>): Option<U>
+    getOrElse(value: T): T
 }
-class None implements Option<never> { }
+class Some<T> implements Option<T> {
+    constructor(private value: T) { }
+    flatMap<U>(f: (value: T) => None): None
+    flatMap<U>(f: (value: T) => Option<U>): Option<U> {
+        return f(this.value)
+    }
+    getOrElse(): T {
+        return this.value
+    }
+}
+class None implements Option<never> {
+    flatMap(): None {
+        return this
+    }
+    getOrElse<U>(value: U): U {
+        return value
+    }
+}
 
 
 
