@@ -104,6 +104,7 @@ interface Option<T> {
 class Some<T> implements Option<T> {
     constructor(private value: T) { }
     flatMap<U>(f: (value: T) => None): None
+    flatMap<U>(f: (value: T) => Some<U>): Some<U>
     flatMap<U>(f: (value: T) => Option<U>): Option<U> {
         return f(this.value)
     }
@@ -120,7 +121,16 @@ class None implements Option<never> {
     }
 }
 
+function Option<T>(value: null | undefined): None
+function Option<T>(value: T): Some<T>
+function Option<T>(value: T): Option<T> {
+    if (value == null) {
+        return new None
+    }
+    return new Some(value)
+}
 
-
+let result2 = Option(6).flatMap(n => Option(n * 3)).flatMap(_ => new None).getOrElse(7)
+console.log(result2)
 
 
