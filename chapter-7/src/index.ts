@@ -133,4 +133,11 @@ function Option<T>(value: T): Option<T> {
 let result2 = Option(6).flatMap(n => Option(n * 3)).flatMap(_ => new None).getOrElse(7)
 console.log(result2)
 
+// Exercises
+
+class API {
+    getLoggedInUserId(): UserID
+    getFriendIDs(userID: UserID): UserID[]
+    getUserName(userID: UserID): string
+}
 
