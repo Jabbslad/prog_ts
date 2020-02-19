@@ -22,3 +22,20 @@ fs.appendFile('/var/log/apache2/access_log', 'New access log entry',
             console.error('error writing', error)
         }
     })
+
+/*
+function appendAndReadPromise(path: string, data: string): Promise<string> {
+    return appendPromise(path, data)
+        .then(() => readPromise(path))
+        .catch(error => console.error(error))
+}
+*/
+
+type Executor = {
+    resolve: Function,
+    reject: Function
+} => void
+
+    class Promise {
+        constructor(f: Executor) { }
+    }
