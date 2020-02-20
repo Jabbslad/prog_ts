@@ -39,3 +39,4 @@ type Executor = {
     class Promise {
         constructor(f: Executor) { }
     }
+import { readFile } from 'fs'
