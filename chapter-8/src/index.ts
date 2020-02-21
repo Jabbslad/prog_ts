@@ -31,9 +31,9 @@ function appendAndReadPromise(path: string, data: string): Promise<string> {
 }
 */
 
-type Executor = {
-    resolve: Function,
-    reject: Function
+type Executor<T, E extends Error> = {
+    resolve: (result: T) => void,
+    reject: (error: E) => void
 } => void
 
     class Promise {
