@@ -36,8 +36,8 @@ type Executor<T, E extends Error> = {
     reject: (error: E) => void
 } => void
 
-    class Promise {
-        constructor(f: Executor) { }
+    class Promise<T, E extends Error> {
+        constructor(f: Executor<T, E>) { }
     }
 import { readFile } from 'fs'
 
